@@ -1,1 +1,28 @@
+# Gallery Images for Second Generation Auto Body
+# Add new entries at the top. The site will display them automatically.
+# Naming format: SecondGenN.webp (e.g., SecondGen1.webp, SecondGen2.webp)
+# All images live in the /images/ folder.
 
+- src: images/SecondGen1.webp
+  caption: "Collision repair -- full rear quarter panel restoration"
+
+- src: images/SecondGen2.webp
+  caption: "Custom paint -- single stage pearl finish"
+
+- src: images/SecondGen3.webp
+  caption: "Insurance repair -- front-end collision, OEM parts"
+
+- src: images/SecondGen4.webp
+  caption: "Restoration -- classic muscle car respray"
+
+- src: images/SecondGen5.webp
+  caption: "Custom body work -- bumper and fascia replacement"
+
+- src: images/SecondGen6.webp
+  caption: "Before and after -- door skin replacement and color match"
+
+- src: images/SecondGen7.webp
+  caption: "Commercial fleet repair -- Chevy Silverado work truck"
+
+- src: images/SecondGen8.webp
+  caption: "Custom restoration -- two-tone finish on a vintage pickup"
