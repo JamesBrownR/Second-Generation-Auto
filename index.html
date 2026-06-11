@@ -1083,20 +1083,8 @@
       nav.classList.toggle('nav-open');
     });
 
-    // ── Gallery data array
-    // When gallery.yml is processed by a static site generator (Jekyll/Hugo),
-    // this array gets populated automatically. For now, it is maintained here.
-    // Format mirrors gallery.yml: src and caption fields.
-    const galleryImages = [
-      { src: 'images/SecondGen1.webp', caption: 'Collision repair -- full rear quarter panel restoration' },
-      { src: 'images/SecondGen2.webp', caption: 'Custom paint -- single stage pearl finish' },
-      { src: 'images/SecondGen3.webp', caption: 'Insurance repair -- front-end collision, OEM parts' },
-      { src: 'images/SecondGen4.webp', caption: 'Restoration -- classic muscle car respray' },
-      { src: 'images/SecondGen5.webp', caption: 'Custom body work -- bumper and fascia replacement' },
-      { src: 'images/SecondGen6.webp', caption: 'Before and after -- door skin replacement and color match' },
-      { src: 'images/SecondGen7.webp', caption: 'Commercial fleet repair -- Chevy Silverado work truck' },
-      { src: 'images/SecondGen8.webp', caption: 'Custom restoration -- two-tone finish on a vintage pickup' },
-    ];
+ 
+  
 
     const galleryGrid = document.getElementById('galleryGrid');
     galleryImages.forEach(img => {
