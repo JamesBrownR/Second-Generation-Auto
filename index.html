@@ -884,7 +884,7 @@ description:
     <div class="gallery-grid">
   {% for image in site.data.gallery %}
   <div class="gallery-item">
-    <img src="/images/{{ image.src }}" alt="{{ image.caption }}" loading="lazy" />
+    <img src="{{ site.baseurl }}/images/{{ image.src }}" alt="{{ image.caption }}" loading="lazy" />
     <div class="gallery-caption">{{ image.caption }}</div>
   </div>
   {% endfor %}
