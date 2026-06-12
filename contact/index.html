@@ -1,1 +1,645 @@
+---
+layout: default
+title: Contact Us | Free Auto Body Estimate | Second Generation Auto Body Davie, FL
+description: Contact Second Generation Auto Body in Davie, FL for a free estimate on collision repair, custom paint, or body work. Call (954) 791-1290 or send a message. Serving all of Broward County.
+---
 
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #0D1B2A;
+    --navy-mid:#112233;
+    --chrome:  #C8D6E0;
+    --white:   #F2F5F8;
+    --red:     #CC2200;
+    --red-dk:  #A81B00;
+    --muted:   #7A8FA0;
+    --border:  #1E3248;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  h1, h2, h3, h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.6rem;
+  }
+
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.8rem;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--red); color: var(--white); }
+  .btn-primary:hover { background: var(--red-dk); }
+  .btn-outline {
+    background: transparent;
+    color: var(--chrome);
+    border: 1px solid var(--chrome);
+  }
+  .btn-outline:hover { background: rgba(200,214,224,0.08); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 9rem 0 4rem;
+    background:
+      linear-gradient(165deg, rgba(13,27,42,0.92) 40%, rgba(13,27,42,0.78) 100%),
+      radial-gradient(ellipse at 70% 50%, #1a3a5c 0%, #0D1B2A 70%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -20deg,
+      transparent,
+      transparent 120px,
+      rgba(200,214,224,0.018) 120px,
+      rgba(200,214,224,0.018) 122px
+    );
+    pointer-events: none;
+  }
+  .page-header .container { position: relative; z-index: 2; }
+  .page-header h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .page-header h1 span { color: var(--chrome); display: block; }
+  .page-header p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 520px;
+    margin-top: 1rem;
+  }
+
+  /* ── QUICK CONTACT STRIP ── */
+  .quick-strip {
+    background: var(--navy-mid);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 0;
+  }
+  .quick-strip-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .quick-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-right: 1px solid var(--border);
+  }
+  .quick-item:last-child { border-right: none; }
+  .quick-item svg { color: var(--red); flex-shrink: 0; }
+  .quick-item-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+  .quick-item-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--chrome);
+    line-height: 1.3;
+  }
+  .quick-item-val a { color: inherit; }
+  .quick-item-val a:hover { color: var(--white); }
+  @media (max-width: 700px) {
+    .quick-strip-inner { grid-template-columns: 1fr; }
+    .quick-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .quick-item:last-child { border-bottom: none; }
+  }
+
+  /* ── MAIN CONTACT SECTION ── */
+  .contact-main {
+    padding: 5rem 0;
+    background: var(--navy);
+  }
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  /* Info column */
+  .contact-info { display: flex; flex-direction: column; gap: 2.5rem; }
+  .info-block h3 {
+    font-size: 1.1rem;
+    color: var(--chrome);
+    margin-bottom: 0.6rem;
+  }
+  .info-block p, .info-block a {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .info-block a:hover { color: var(--white); }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .hours-table tr { border-bottom: 1px solid var(--border); }
+  .hours-table tr:last-child { border-bottom: none; }
+  .hours-table td {
+    padding: 0.55rem 0;
+    color: var(--muted);
+  }
+  .hours-table td:last-child {
+    text-align: right;
+    color: var(--white);
+  }
+  .hours-table tr.today td {
+    color: var(--chrome);
+    font-weight: 600;
+  }
+  .hours-table tr.today td:last-child { color: var(--red); }
+
+  .social-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.4rem 1rem;
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .social-btn:hover { color: var(--chrome); border-color: var(--chrome); }
+
+  /* Form column */
+  .contact-form-wrap {
+    background: var(--navy-mid);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem 2.2rem;
+  }
+  .contact-form-wrap h2 {
+    font-size: 1.8rem;
+    color: var(--chrome);
+    margin-bottom: 0.4rem;
+  }
+  .contact-form-wrap .form-subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 1.8rem;
+    line-height: 1.6;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-field label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .form-field input,
+  .form-field textarea,
+  .form-field select {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+    transition: border-color 0.2s;
+    outline: none;
+    width: 100%;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus,
+  .form-field select:focus { border-color: var(--chrome); }
+  .form-field textarea { resize: vertical; min-height: 120px; }
+  .form-field select option { background: var(--navy); }
+  .form-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .form-submit {
+    background: var(--red);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.8rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--red-dk); }
+
+  /* Success state */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+  }
+  .form-success svg { color: var(--red); margin: 0 auto 1rem; }
+  .form-success h3 {
+    font-size: 1.5rem;
+    color: var(--chrome);
+    margin-bottom: 0.5rem;
+  }
+  .form-success p { color: var(--muted); font-size: 0.95rem; }
+
+  @media (max-width: 860px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* ── MAP ── */
+  .map-section {
+    background: var(--navy-mid);
+    border-top: 1px solid var(--border);
+    padding: 0;
+  }
+  .map-section iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+    border: none;
+  }
+
+  /* ── DIRECTIONS STRIP ── */
+  .directions-strip {
+    background: var(--navy);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 0;
+  }
+  .directions-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .directions-inner h3 {
+    font-size: 1.2rem;
+    color: var(--chrome);
+    margin-bottom: 0.8rem;
+  }
+  .directions-inner p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+  @media (max-width: 700px) {
+    .directions-inner { grid-template-columns: 1fr; }
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #070F18;
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 2rem;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 2.5rem;
+  }
+  .footer-logo img { height: 64px; }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2.5rem;
+    list-style: none;
+  }
+  .footer-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+  .footer-contact-col {
+    text-align: right;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .footer-contact-col a { color: var(--muted); }
+  .footer-contact-col a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-contact-col { text-align: left; }
+    .footer-bottom { flex-direction: column; }
+  }
+</style>
+
+<!-- ── PAGE HEADER ── -->
+<div class="page-header">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h1>
+      Contact Us
+      <span>Free Estimates, Same-Day Response</span>
+    </h1>
+    <p>Call the shop, stop by in Davie, or fill out the form below. We respond the same business day and there is never a charge for an estimate.</p>
+  </div>
+</div>
+
+<!-- ── QUICK CONTACT ── -->
+<div class="quick-strip">
+  <div class="container">
+    <div class="quick-strip-inner">
+      <div class="quick-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        <div>
+          <div class="quick-item-label">Call the Shop</div>
+          <div class="quick-item-val"><a href="tel:+19547911290">(954) 791-1290</a></div>
+        </div>
+      </div>
+      <div class="quick-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <div class="quick-item-label">Find Us</div>
+          <div class="quick-item-val"><a href="https://maps.google.com/?q=4607+Oakes+Rd+Davie+FL+33314" target="_blank" rel="noopener">4607 Oakes Rd, Davie FL 33314</a></div>
+        </div>
+      </div>
+      <div class="quick-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div>
+          <div class="quick-item-label">Hours</div>
+          <div class="quick-item-val">Mon - Fri: 8AM - 5PM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN CONTACT ── -->
+<section class="contact-main">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Left: Info -->
+      <div class="contact-info">
+
+        <div class="info-block">
+          <p class="section-label">Location</p>
+          <h3>Second Generation Auto Body</h3>
+          <p>
+            <a href="https://maps.google.com/?q=4607+Oakes+Rd+Davie+FL+33314" target="_blank" rel="noopener">
+              4607 Oakes Rd<br>Davie, FL 33314
+            </a>
+          </p>
+          <p style="margin-top: 0.8rem; font-size: 0.88rem;">Off Flamingo Road between I-595 and Griffin Road. Look for the shop on the south side of Oakes.</p>
+        </div>
+
+        <div class="info-block">
+          <p class="section-label">Hours</p>
+          <h3>Shop Hours</h3>
+          <table class="hours-table">
+            <tr><td>Monday</td><td>8:00 AM - 5:00 PM</td></tr>
+            <tr><td>Tuesday</td><td>8:00 AM - 5:00 PM</td></tr>
+            <tr><td>Wednesday</td><td>8:00 AM - 5:00 PM</td></tr>
+            <tr><td>Thursday</td><td>8:00 AM - 5:00 PM</td></tr>
+            <tr><td>Friday</td><td>8:00 AM - 5:00 PM</td></tr>
+            <tr><td>Saturday</td><td>Closed</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+
+        <div class="info-block">
+          <p class="section-label">Find Us Online</p>
+          <h3>Reviews and Social</h3>
+          <div class="social-row">
+            <a href="https://www.yelp.com/biz/second-generation-auto-body-davie" target="_blank" rel="noopener" class="social-btn">
+              Yelp
+            </a>
+            <a href="https://www.facebook.com/p/Second-Generation-Autobody-100064284751288" target="_blank" rel="noopener" class="social-btn">
+              Facebook
+            </a>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <p class="section-label">Service Area</p>
+          <h3>Serving All of Broward County</h3>
+          <p>Davie, Fort Lauderdale, Pembroke Pines, Cooper City, Weston, Plantation, and surrounding areas.</p>
+          <p style="margin-top: 0.5rem;"><a href="{{ site.baseurl }}/service-areas/" style="color: var(--red);">View all service areas &rarr;</a></p>
+        </div>
+
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-wrap">
+        <h2>Get a Free Estimate</h2>
+        <p class="form-subtitle">Fill out the form and Tony will be in touch the same business day. No obligation, no hard sell.</p>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" placeholder="Tony" required />
+            </div>
+            <div class="form-field">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(954) 000-0000" />
+            </div>
+            <div class="form-field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="collision">Collision Repair</option>
+              <option value="insurance">Insurance Claim</option>
+              <option value="paint">Custom Paint</option>
+              <option value="restoration">Restoration</option>
+              <option value="bodywork">Body Work</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="vehicle">Your Vehicle</label>
+            <input type="text" id="vehicle" name="vehicle" placeholder="Year, Make, Model (e.g. 2018 Honda Accord)" />
+          </div>
+          <div class="form-field">
+            <label for="message">Tell Us What Happened</label>
+            <textarea id="message" name="message" placeholder="Describe the damage or what you need done. Photos can be emailed after we connect."></textarea>
+          </div>
+          <p class="form-note">We follow up by phone or email within one business day. Estimate is always free.</p>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          <h3>Message Sent</h3>
+          <p>Tony will be in touch within one business day. If you need to reach us sooner, call <a href="tel:+19547911290" style="color: var(--red);">(954) 791-1290</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── MAP ── -->
+<div class="map-section">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.6557931469974!2d-80.212433924589!3d26.077503277154815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a9e77742d221%3A0x1c017bb66db8bee7!2sSecond%20Generation%20Auto%20Llc!5e0!3m2!1sen!2sus!4v1781222301719!5m2!1sen!2sus"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Second Generation Auto Body location map">
+  </iframe>
+</div>
+
+<!-- ── DIRECTIONS ── -->
+<div class="directions-strip">
+  <div class="container">
+    <div class="directions-inner">
+      <div>
+        <p class="section-label">Getting Here</p>
+        <h3>From Fort Lauderdale</h3>
+        <p>Take I-595 West to Flamingo Road South. Turn right on Oakes Road. The shop is on the south side of the road. About 15 minutes from downtown Fort Lauderdale.</p>
+      </div>
+      <div>
+        <p class="section-label">Getting Here</p>
+        <h3>From Pembroke Pines / Miramar</h3>
+        <p>Take Flamingo Road North to Oakes Road. Turn left on Oakes. We are on your right. About 10 minutes from most of Pembroke Pines and easy off 595.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Highlight today's hours row
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const today = days[new Date().getDay()];
+  const rows = document.querySelectorAll('.hours-table tr');
+  rows.forEach(row => {
+    if (row.cells[0] && row.cells[0].textContent.trim() === today) {
+      row.classList.add('today');
+    }
+  });
+
+  // Formspree AJAX submit
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('formSuccess');
+  if (form && successMsg) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          alert('Something went wrong. Please call us at (954) 791-1290.');
+        }
+      } catch (err) {
+        alert('Something went wrong. Please call us at (954) 791-1290.');
+      }
+    });
+  }
+});
+</script>
