@@ -1094,61 +1094,55 @@ description: Second Generation Auto Body is a family owned collision repair shop
  
 
  <script>
-  // ── Current year
-  document.getElementById('year').textContent = new Date().getFullYear();
+ document.addEventListener('DOMContentLoaded', function () {
 
-  // ── Mobile nav toggle
+  // Current year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const nav = document.getElementById('nav');
-  if (navToggle) {
+  if (navToggle && nav) {
     navToggle.addEventListener('click', () => {
       nav.classList.toggle('nav-open');
     });
   }
 
-  // ── Gallery slider
-  document.addEventListener('DOMContentLoaded', function () {
-    const slider = document.getElementById('gallerySlider');
-    const btnNext = document.getElementById('sliderNext');
-    const btnPrev = document.getElementById('sliderPrev');
+  // Gallery slider
+  const slider = document.getElementById('gallerySlider');
+  const btnNext = document.getElementById('sliderNext');
+  const btnPrev = document.getElementById('sliderPrev');
+  if (slider && btnNext && btnPrev) {
+    btnNext.addEventListener('click', () => { slider.scrollLeft += 340; });
+    btnPrev.addEventListener('click', () => { slider.scrollLeft -= 340; });
+  }
 
-    if (slider && btnNext && btnPrev) {
-      btnNext.addEventListener('click', () => {
-        slider.scrollLeft += 340;
-      });
-      btnPrev.addEventListener('click', () => {
-        slider.scrollLeft -= 340;
-      });
-    }
-  });
-
-  // ── Scroll fade-in observer
-  document.addEventListener('DOMContentLoaded', function () {
-    const fadeEls = document.querySelectorAll('.fade-in');
-
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      fadeEls.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom >= 0) {
-          el.classList.add('visible'); // already on screen
-        } else {
-          observer.observe(el);
+  // Scroll fade-in observer
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
         }
       });
-    } else {
-      // Fallback: just make everything visible
-      fadeEls.forEach(el => el.classList.add('visible'));
-    }
-  });
+    }, { threshold: 0.12 });
+
+    fadeEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+  } else {
+    fadeEls.forEach(el => el.classList.add('visible'));
+  }
+
+});
 </script>
 
 
