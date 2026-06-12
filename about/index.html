@@ -1,1 +1,500 @@
+---
+layout: default
+title: About Us | Family Owned Auto Body Shop in Davie, FL | Second Generation Auto Body
+description: Second Generation Auto Body is a family owned collision repair shop in Davie, FL with over 35 years of experience. Meet Tony and his team. Serving all of Broward County.
+---
 
+<style>
+  section { padding: 5rem 0; }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 9rem 0 4rem;
+    background:
+      linear-gradient(165deg, rgba(13,27,42,0.92) 40%, rgba(13,27,42,0.78) 100%),
+      radial-gradient(ellipse at 70% 50%, #1a3a5c 0%, #0D1B2A 70%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -20deg,
+      transparent,
+      transparent 120px,
+      rgba(200,214,224,0.018) 120px,
+      rgba(200,214,224,0.018) 122px
+    );
+    pointer-events: none;
+  }
+  .page-header .container { position: relative; z-index: 2; }
+  .page-header h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .page-header h1 span { color: var(--chrome); display: block; }
+  .page-header p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 560px;
+    margin-top: 1rem;
+    line-height: 1.7;
+  }
+
+  /* ── STORY SECTION ── */
+  .story-section {
+    background: var(--navy);
+    padding: 5rem 0;
+  }
+  .story-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .story-img {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 4/3;
+    background: var(--navy-mid);
+  }
+  .story-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .story-img-accent {
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    height: 4px;
+    background: var(--red);
+  }
+  .story-content h2 {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--chrome);
+    margin-bottom: 1.2rem;
+  }
+  .story-content p {
+    font-size: 0.97rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .story-content p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 860px) {
+    .story-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--navy-mid);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 0;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 1.2rem 1rem;
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--chrome);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--red); }
+  .stat-label {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+    line-height: 1.4;
+  }
+  @media (max-width: 640px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .stat-item:nth-child(1),
+    .stat-item:nth-child(2) { border-bottom: 1px solid var(--border); }
+  }
+
+  /* ── VALUES ── */
+  .values-section {
+    background: var(--navy);
+    padding: 5rem 0;
+  }
+  .values-section h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--chrome);
+    margin-bottom: 3rem;
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .value-card {
+    background: var(--navy-mid);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem 1.8rem;
+    transition: border-color 0.2s;
+  }
+  .value-card:hover { border-color: var(--red); }
+  .value-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(204,34,0,0.1);
+    border: 1px solid rgba(204,34,0,0.25);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+  .value-icon svg { color: var(--red); }
+  .value-card h3 {
+    font-size: 1.2rem;
+    color: var(--chrome);
+    margin-bottom: 0.6rem;
+  }
+  .value-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── FAMILY SECTION ── */
+  .family-section {
+    background: var(--navy-mid);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 5rem 0;
+  }
+  .family-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .family-content h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--chrome);
+    margin-bottom: 1.2rem;
+  }
+  .family-content p {
+    font-size: 0.97rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .family-img {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 4/3;
+    background: var(--navy);
+    position: relative;
+  }
+  .family-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 860px) {
+    .family-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .family-img { order: -1; }
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    background: var(--navy);
+    padding: 5rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .pull-quote blockquote {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: var(--chrome);
+    line-height: 1.3;
+    max-width: 760px;
+    margin: 0 auto 1.5rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .pull-quote blockquote::before {
+    content: '\201C';
+    color: var(--red);
+    font-size: 1.2em;
+    line-height: 0;
+    vertical-align: -0.3em;
+    margin-right: 0.1em;
+  }
+  .pull-quote blockquote::after {
+    content: '\201D';
+    color: var(--red);
+    font-size: 1.2em;
+    line-height: 0;
+    vertical-align: -0.3em;
+    margin-left: 0.1em;
+  }
+  .pull-quote cite {
+    font-style: normal;
+    font-size: 0.82rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--navy-mid);
+    padding: 5rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .cta-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--chrome);
+    margin-bottom: 0.75rem;
+  }
+  .cta-section p {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.8rem;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--red); color: var(--white); }
+  .btn-primary:hover { background: var(--red-dk); }
+  .btn-outline {
+    background: transparent;
+    color: var(--chrome);
+    border: 1px solid var(--chrome);
+  }
+  .btn-outline:hover { background: rgba(200,214,224,0.08); }
+</style>
+
+<!-- ── PAGE HEADER ── -->
+<div class="page-header">
+  <div class="container">
+    <p class="section-label">Our Story</p>
+    <h1>
+      About Second Generation
+      <span>Family Owned Since Day One</span>
+    </h1>
+    <p>Over 35 years ago, a passion for doing collision work the right way turned into a shop. That shop is still here, still family run, and still doing the work the same way it always has.</p>
+  </div>
+</div>
+
+<!-- ── STORY ── -->
+<section class="story-section">
+  <div class="container">
+    <div class="story-layout">
+      <div class="story-img">
+        <img src="{{ site.baseurl }}/images/SecondGenAbout.webp" alt="Second Generation Auto Body shop in Davie FL" loading="lazy" />
+        <div class="story-img-accent"></div>
+      </div>
+      <div class="story-content">
+        <p class="section-label">Where We Came From</p>
+        <h2>Built on Craftsmanship, Not Volume</h2>
+        <p>Second Generation Auto Body started as a commitment to doing collision repair the right way. Not the fast way. Not the cheap way. The right way. That meant caring about every panel, every paint line, every car that came through the door regardless of what it was worth on paper.</p>
+        <p>The name says it all. This is a shop built to be passed down, not sold off. Tony built it with the intention that his son would one day work alongside him, and that is exactly what happened. When you bring your car here, you are dealing with people who have a reason to stand behind their work beyond the next transaction.</p>
+        <p>We are based in Davie, FL and serve all of Broward County. We work with all major insurance companies and take on everything from everyday collision repairs to full vehicle restorations. If you want honest work done well, this is the shop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">35<span>+</span></div>
+        <div class="stat-label">Years in Business</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">All</div>
+        <div class="stat-label">Major Insurance Companies Accepted</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5<span>★</span></div>
+        <div class="stat-label">Rated on Google</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1<span>st</span></div>
+        <div class="stat-label">Call for Paint and Body in Davie</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── VALUES ── -->
+<section class="values-section">
+  <div class="container">
+    <p class="section-label">How We Work</p>
+    <h2>What You Can Expect from This Shop</h2>
+    <div class="values-grid">
+
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>Honest Estimates</h3>
+        <p>Tony will tell you what your car actually needs and what it does not need. If a repair costs more than it is worth, he will tell you that too. Several customers have noted he talked them out of work that was unnecessary.</p>
+      </div>
+
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <h3>Clear Communication</h3>
+        <p>You will know where your car is at every stage of the job. No chasing someone down for an update. No surprises when you come to pick it up.</p>
+      </div>
+
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Done When Promised</h3>
+        <p>We give you a timeframe and we stick to it. If something changes, you hear from us before you show up expecting your car to be ready.</p>
+      </div>
+
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3>Quality That Holds Up</h3>
+        <p>Proper prep, quality materials, and a cut and buff on every full paint job. Cars leave this shop looking better than they came in. That is the standard, not the exception.</p>
+      </div>
+
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Insurance Handled</h3>
+        <p>We work directly with all major carriers. If your adjuster pushes back on a repair, we handle that conversation. You should not have to fight for the work your car needs.</p>
+      </div>
+
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>You Talk to the People Doing the Work</h3>
+        <p>No service writers, no layers of staff between you and the shop. When you call, Tony picks up. When you have a question, you get an answer from the person who knows the car.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FAMILY ── -->
+<section class="family-section">
+  <div class="container">
+    <div class="family-layout">
+      <div class="family-content">
+        <p class="section-label">The Name Behind the Shop</p>
+        <h2>Why It's Called Second Generation</h2>
+        <p>Tony started this shop more than 35 years ago. He built it the way most good things get built: slowly, doing right by people, and letting the work speak for itself. Over time, his son came in alongside him and that is where the name comes from.</p>
+        <p>Second Generation is not just a name. It is the reason this shop operates the way it does. When a business is meant to be handed down, you do not cut corners on the work or on the customer. Everything has to be done in a way you can be proud of, because the next person carrying the name will have to live with it.</p>
+        <p>That is how we approach every car that comes through the door, whether it is a daily driver with a fender bender or a classic somebody has been saving for years.</p>
+      </div>
+      <div class="family-img">
+        <img src="{{ site.baseurl }}/images/SecondGen1.webp" alt="Work at Second Generation Auto Body in Davie FL" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE ── -->
+<div class="pull-quote">
+  <div class="container">
+    <blockquote>Tony came across as honest, knowledgeable and respectful. He made you feel like he loved my car as much as I do.</blockquote>
+    <cite>Cassius Casio, Google Review</cite>
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="container">
+    <p class="section-label">Ready to Get Started?</p>
+    <h2>Come See the Shop</h2>
+    <p>Stop by 4607 Oakes Rd in Davie, call us, or send a message. Estimates are always free and we will give you a straight answer.</p>
+    <div class="cta-actions">
+      <a href="{{ site.baseurl }}/contact/" class="btn btn-primary">Get a Free Estimate</a>
+      <a href="tel:+19547911290" class="btn btn-outline">Call (954) 791-1290</a>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+  } else {
+    fadeEls.forEach(el => el.classList.add('visible'));
+  }
+});
+</script>
