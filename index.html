@@ -1109,26 +1109,37 @@ description: Second Generation Auto Body is a family owned collision repair shop
 
    
 
-   const slider = document.getElementById('gallerySlider');
-document.getElementById('sliderNext').addEventListener('click', () => {
-  slider.scrollBy({ left: 340, behavior: 'smooth' });
-});
-document.getElementById('sliderPrev').addEventListener('click', () => {
-  slider.scrollBy({ left: -340, behavior: 'smooth' });
-});
+ // ── Gallery slider
+const slider = document.getElementById('gallerySlider');
+if (slider) {
+  document.getElementById('sliderNext').addEventListener('click', () => {
+    slider.scrollBy({ left: 340, behavior: 'smooth' });
+  });
+  document.getElementById('sliderPrev').addEventListener('click', () => {
+    slider.scrollBy({ left: -340, behavior: 'smooth' });
+  });
+}
 
-   
-    // ── Scroll fade-in observer
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    fadeEls.forEach(el => observer.observe(el));
+   // ── Scroll fade-in observer
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+fadeEls.forEach(el => {
+  // If already in viewport on load, make visible immediately
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    el.classList.add('visible');
+  } else {
+    observer.observe(el);
+  }
+});
   </script>
 
 
