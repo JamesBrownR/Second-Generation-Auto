@@ -7,53 +7,7 @@ description: Second Generation Auto Body in Davie, FL offers collision repair, i
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --navy:    #0D1B2A;
-    --navy-mid:#112233;
-    --chrome:  #C8D6E0;
-    --white:   #F2F5F8;
-    --red:     #CC2200;
-    --red-dk:  #A81B00;
-    --muted:   #7A8FA0;
-    --border:  #1E3248;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--navy);
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-  }
-
-  a { color: inherit; text-decoration: none; }
-  img { display: block; max-width: 100%; }
-
-  h1, h2, h3, h4 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
-  .section-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 0.6rem;
-  }
-
-  .container {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
+  
 
   section { padding: 5rem 0; }
 
@@ -297,70 +251,7 @@ description: Second Generation Auto Body in Davie, FL offers collision repair, i
     flex-wrap: wrap;
   }
 
-  /* ── FOOTER ── */
-  .footer {
-    background: #070F18;
-    border-top: 1px solid var(--border);
-    padding: 3rem 0 2rem;
-  }
-  .footer-inner {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 2rem;
-    align-items: start;
-    margin-bottom: 2.5rem;
-  }
-  .footer-logo img { height: 64px; }
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 2.5rem;
-    list-style: none;
-  }
-  .footer-links a {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: var(--white); }
-  .footer-contact-col {
-    text-align: right;
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.8;
-  }
-  .footer-contact-col a { color: var(--muted); }
-  .footer-contact-col a:hover { color: var(--white); }
-  .footer-bottom {
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
-    font-size: 0.78rem;
-    color: var(--muted);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  @media (max-width: 768px) {
-    .footer-inner { grid-template-columns: 1fr; }
-    .footer-contact-col { text-align: left; }
-    .footer-bottom { flex-direction: column; }
-  }
-
-  /* ── Fade in ── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-  @media (prefers-reduced-motion: reduce) {
-    .fade-in { opacity: 1; transform: none; transition: none; }
-  }
+ 
 </style>
 
 <!-- ── PAGE HEADER ── -->
