@@ -10,7 +10,7 @@
       --red:     #CC2200;
       --red-dk:  #A81B00;
       --muted:   #7A8FA0;
-      --border:  #1E3248; 
+      --border:  #1E3248;
     }
 
     html { scroll-behavior: smooth; }
@@ -67,104 +67,69 @@
       flex: 1;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--chrome), transparent);
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .form-row { grid-template-columns: 1fr; }
+    }
+    .chrome-rule span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--chrome);
+      opacity: 0.5;
+      white-space: nowrap;
     }
 
-    /* ── SERVICE AREAS STRIP ── */
-    .areas {
-      background: var(--navy);
-      padding: 4rem 0;
-      border-top: 1px solid var(--border);
+    /* ── NAV ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 27, 42, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
     }
-    .areas h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--chrome); margin-bottom: 2rem; text-align: center; }
-    .areas-list {
+    .nav-inner {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
-    .area-tag {
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    .nav-links a {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.9rem;
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 0.4rem 1rem;
-      border-radius: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .area-tag:hover { color: var(--chrome); border-color: var(--chrome); }
-    .area-tag a { color: inherit; }
-
-    /* ── FOOTER ── */
-    .footer {
-      background: #070F18;
-      border-top: 1px solid var(--border);
-      padding: 3rem 0 2rem;
-    }
-    .footer-inner {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 2rem;
-      align-items: start;
-      margin-bottom: 2.5rem;
-    }
-    .footer-logo img { height: 64px; }
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 2.5rem;
-      list-style: none;
-    }
-    .footer-links a {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
+      color: var(--chrome);
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--white); }
-    .footer-contact-col {
-      text-align: right;
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.8;
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 3px;
+      transition: background 0.2s !important;
     }
-    .footer-contact-col a { color: var(--muted); }
-    .footer-contact-col a:hover { color: var(--white); }
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 1.5rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .nav-cta:hover { background: var(--red-dk) !important; color: var(--white) !important; }
 
-    @media (max-width: 768px) {
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-contact-col { text-align: left; }
-      .footer-bottom { flex-direction: column; }
-    }
 
-    /* ── Scroll fade-in ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .fade-in { opacity: 1; transform: none; transition: none; }
-    }
   </style>
