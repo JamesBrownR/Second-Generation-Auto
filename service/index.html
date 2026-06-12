@@ -1,1 +1,572 @@
+---
+layout: default
+title: Auto Body Services | Collision Repair, Custom Paint & Restorations | Second Generation Auto Body
+description: Second Generation Auto Body in Davie, FL offers collision repair, insurance claim handling, custom paint, restorations, and body work. Serving all of Broward County. Call (954) 791-1290.
+---
 
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #0D1B2A;
+    --navy-mid:#112233;
+    --chrome:  #C8D6E0;
+    --white:   #F2F5F8;
+    --red:     #CC2200;
+    --red-dk:  #A81B00;
+    --muted:   #7A8FA0;
+    --border:  #1E3248;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  h1, h2, h3, h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.6rem;
+  }
+
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  section { padding: 5rem 0; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.8rem;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--red); color: var(--white); }
+  .btn-primary:hover { background: var(--red-dk); }
+  .btn-outline {
+    background: transparent;
+    color: var(--chrome);
+    border: 1px solid var(--chrome);
+  }
+  .btn-outline:hover { background: rgba(200,214,224,0.08); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 9rem 0 4rem;
+    background:
+      linear-gradient(165deg, rgba(13,27,42,0.92) 40%, rgba(13,27,42,0.78) 100%),
+      radial-gradient(ellipse at 70% 50%, #1a3a5c 0%, #0D1B2A 70%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -20deg,
+      transparent,
+      transparent 120px,
+      rgba(200,214,224,0.018) 120px,
+      rgba(200,214,224,0.018) 122px
+    );
+    pointer-events: none;
+  }
+  .page-header .container { position: relative; z-index: 2; }
+  .page-header h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .page-header h1 span { color: var(--chrome); display: block; }
+  .page-header p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 520px;
+    margin-top: 1rem;
+  }
+
+  /* ── SERVICES GRID ── */
+  .services-main { background: var(--navy); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--navy-mid);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.2rem 2rem;
+    transition: border-color 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card:hover {
+    border-color: var(--red);
+    transform: translateY(-3px);
+  }
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(204,34,0,0.1);
+    border: 1px solid rgba(204,34,0,0.25);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.3rem;
+  }
+  .service-icon svg { color: var(--red); }
+  .service-card h3 {
+    font-size: 1.4rem;
+    color: var(--chrome);
+    margin-bottom: 0.7rem;
+  }
+  .service-card p {
+    font-size: 0.93rem;
+    color: var(--muted);
+    line-height: 1.7;
+    flex: 1;
+  }
+  .service-card ul {
+    list-style: none;
+    margin: 1rem 0 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  .service-card ul li {
+    font-size: 0.88rem;
+    color: var(--muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.5;
+  }
+  .service-card ul li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 1.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    transition: gap 0.2s;
+    align-self: flex-start;
+  }
+  .service-card:hover .service-link { gap: 0.55rem; }
+
+  /* ── WHY US STRIP ── */
+  .why-strip {
+    background: var(--navy-mid);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 0;
+  }
+  .why-strip h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--chrome);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+  .why-item {
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  .why-item svg {
+    color: var(--red);
+    margin: 0 auto 1rem;
+  }
+  .why-item h4 {
+    font-size: 1.1rem;
+    color: var(--chrome);
+    margin-bottom: 0.5rem;
+  }
+  .why-item p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ── INSURANCE BANNER ── */
+  .insurance-banner {
+    background: var(--navy);
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .insurance-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+  .insurance-inner h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--chrome);
+    margin-bottom: 0.75rem;
+  }
+  .insurance-inner p {
+    font-size: 0.97rem;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+  @media (max-width: 680px) {
+    .insurance-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .insurance-inner .btn { width: 100%; justify-content: center; }
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--navy-mid);
+    padding: 5rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .cta-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--chrome);
+    margin-bottom: 0.75rem;
+  }
+  .cta-section p {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #070F18;
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 2rem;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 2.5rem;
+  }
+  .footer-logo img { height: 64px; }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2.5rem;
+    list-style: none;
+  }
+  .footer-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+  .footer-contact-col {
+    text-align: right;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .footer-contact-col a { color: var(--muted); }
+  .footer-contact-col a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-contact-col { text-align: left; }
+    .footer-bottom { flex-direction: column; }
+  }
+
+  /* ── Fade in ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+
+<!-- ── PAGE HEADER ── -->
+<div class="page-header">
+  <div class="container">
+    <p class="section-label">What We Do</p>
+    <h1>
+      Auto Body Services
+      <span>Davie, FL</span>
+    </h1>
+    <p>From a minor fender bender to a full frame restoration, Second Generation Auto Body handles it. Family owned and operated for over 35 years in Davie, FL. We work with all major insurance companies and all budgets.</p>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="services-main">
+  <div class="container">
+    <div class="services-grid">
+
+      <!-- Collision Repair -->
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10.5 10 15"/><path d="M9.5 6.5 6 10l1.5 1.5"/><path d="m15 3-1.5 1.5"/><path d="M18 6l1.5-1.5"/><path d="m21 9-1.5 1.5"/><path d="M9 21 3 15l9-9 6 6-9 9z"/><path d="m14 6 4 4"/></svg>
+        </div>
+        <h3>Collision Repair</h3>
+        <p>Full structural and cosmetic collision repair on all makes and models. We restore your vehicle to pre-accident condition using quality parts and proven methods.</p>
+        <ul>
+          <li>Frame and structural straightening</li>
+          <li>Panel replacement and alignment</li>
+          <li>Bumper repair and replacement</li>
+          <li>All makes and models accepted</li>
+          <li>OEM and quality aftermarket parts</li>
+        </ul>
+        <a href="{{ site.baseurl }}/services/collision-repair/" class="service-link">Learn More &rarr;</a>
+      </div>
+
+      <!-- Insurance Claims -->
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Insurance Claims</h3>
+        <p>We work directly with all major insurance companies so you do not have to. From the initial estimate through final pickup, we manage the process for you.</p>
+        <ul>
+          <li>All major carriers accepted</li>
+          <li>Direct billing to your insurance</li>
+          <li>Supplement handling included</li>
+          <li>We advocate for proper repairs</li>
+          <li>Rental car coordination assistance</li>
+        </ul>
+        <a href="{{ site.baseurl }}/services/insurance-claims/" class="service-link">Learn More &rarr;</a>
+      </div>
+
+      <!-- Custom Paint -->
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10"/><path d="M8 12h4l2 5"/><path d="M20 17v5"/><path d="M20 22v.01"/></svg>
+        </div>
+        <h3>Custom Paint</h3>
+        <p>Show car finishes, color changes, blacked-out trim, pearl and metallic work. Every paint job is treated like it belongs on a show floor, not just the ones that are headed there.</p>
+        <ul>
+          <li>Single panel to full vehicle refinish</li>
+          <li>Color changes and custom mixes</li>
+          <li>Pearl, metallic, and specialty finishes</li>
+          <li>Blackout packages (roof, trim, wheels)</li>
+          <li>Cut and buff included on full jobs</li>
+        </ul>
+        <a href="{{ site.baseurl }}/services/custom-paint/" class="service-link">Learn More &rarr;</a>
+      </div>
+
+      <!-- Restorations -->
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>
+        </div>
+        <h3>Restorations</h3>
+        <p>Classic cars, project vehicles, sentimental rides that deserve another life. We take on the work most shops will not touch and we do it with the care it deserves.</p>
+        <ul>
+          <li>Classic and vintage vehicles</li>
+          <li>Full and partial body restorations</li>
+          <li>Rust removal and metal fabrication</li>
+          <li>Rotted panel replacement</li>
+          <li>Show-quality final finish available</li>
+        </ul>
+        <a href="{{ site.baseurl }}/services/restorations/" class="service-link">Learn More &rarr;</a>
+      </div>
+
+      <!-- Body Work -->
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+        </div>
+        <h3>Body Work</h3>
+        <p>Dents, dings, deep scratches, rust spots, and panel damage. No job is too small. We take the same pride in a door ding as we do a full collision job.</p>
+        <ul>
+          <li>Dent and ding repair</li>
+          <li>Scratch and scuff removal</li>
+          <li>Rust repair and treatment</li>
+          <li>Panel straightening and replacement</li>
+          <li>Painted bumper and trim repair</li>
+        </ul>
+        <a href="{{ site.baseurl }}/services/body-work/" class="service-link">Learn More &rarr;</a>
+      </div>
+
+      <!-- No Insurance -->
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>No Insurance? No Problem.</h3>
+        <p>You do not need to go through insurance to get quality work done here. We give honest estimates on out-of-pocket repairs and work with you on a plan that fits your situation.</p>
+        <ul>
+          <li>Upfront written estimates</li>
+          <li>No pressure, no upsells</li>
+          <li>Honest assessment of what actually needs repair</li>
+          <li>Same quality as any insurance job</li>
+        </ul>
+        <a href="{{ site.baseurl }}/contact/" class="service-link">Get a Free Estimate &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ── -->
+<div class="why-strip">
+  <div class="container">
+    <p class="section-label" style="text-align:center;">Why Second Generation</p>
+    <h2>The Shop Davie Trusts</h2>
+    <div class="why-grid">
+      <div class="why-item fade-in">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <h4>Family Owned, 35+ Years</h4>
+        <p>Tony and his son run the shop. You talk to the people doing the work, not a service writer passing notes.</p>
+      </div>
+      <div class="why-item fade-in">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <h4>Honest Estimates</h4>
+        <p>We tell you what your car actually needs. Multiple customers have noted Tony recommended against unnecessary work.</p>
+      </div>
+      <div class="why-item fade-in">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <h4>Stays in Communication</h4>
+        <p>You know where your car is at every stage. No waiting around wondering when it will be done.</p>
+      </div>
+      <div class="why-item fade-in">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <h4>Quality That Shows</h4>
+        <p>Cut, buffed, detailed. Cars leave this shop looking better than they came in, whether it was a door ding or a full restore.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── INSURANCE BANNER ── -->
+<div class="insurance-banner">
+  <div class="container">
+    <div class="insurance-inner">
+      <div>
+        <p class="section-label">Insurance Work</p>
+        <h2>We Work With All Major Carriers</h2>
+        <p>State Farm, GEICO, Progressive, Allstate, USAA, and more. Bring us your claim number and we take it from there. If your insurance company gives you trouble, we have seen it before and we know how to handle it.</p>
+      </div>
+      <a href="{{ site.baseurl }}/contact/" class="btn btn-primary">Start Your Claim</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="container">
+    <p class="section-label">Ready to Get Started?</p>
+    <h2>Get a Free Estimate Today</h2>
+    <p>Call us, stop by the shop in Davie, or send a message. We respond the same business day.</p>
+    <div class="cta-actions">
+      <a href="{{ site.baseurl }}/contact/" class="btn btn-primary">Contact Us</a>
+      <a href="tel:+19547911290" class="btn btn-outline">Call (954) 791-1290</a>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+  } else {
+    fadeEls.forEach(el => el.classList.add('visible'));
+  }
+});
+</script>
